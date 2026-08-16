@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+/* =========================================================
+   デザイントークン
+   ライトを既定とし、OS がダークのときだけ値を差し替える。
+   切り替えボタンは持たない。
+   ========================================================= */
+
+:root {
+  --ground: #fafafc; /* ページ背景 */
+  --surface: #ffffff; /* カード・ヘッダー */
+  --ink: #12141b; /* 見出し・本文 */
+  --ink-2: #4a5060; /* 説明文 */
+  --ink-3: #838a9e; /* 日付・ラベル */
+  --line: #e3e5ec; /* 区切り線 */
+  --line-2: #d3d7e2; /* タグ枠など、やや強い線 */
+  --accent: #2544d6; /* Morpho ブルー: リンク・ボタン */
+  --on-accent: #ffffff; /* アクセント上に乗る文字 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #0d0f15;
+    --surface: #171a24;
+    --ink: #e9ebf2;
+    --ink-2: #a6acc0;
+    --ink-3: #767d93;
+    --line: #242835;
+    --line-2: #333949;
+    --accent: #8fa4ff; /* 暗い地では沈むので明度を上げる */
+    --on-accent: #0d0f15;
+  }
+}
+
+/* Tailwind のユーティリティに接続する。
+   text-ink / bg-ground / border-line のように使えるようになる。 */
+@theme inline {
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+
+  /* 欧文は IBM Plex Sans、和文はそこに無いので IBM Plex Sans JP に落ちる */
+  --font-sans:
+    var(--font-plex-sans), var(--font-plex-jp), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.8; /* 和文は欧文より行間を広く取らないと詰まって見える */
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
