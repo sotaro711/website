@@ -22,15 +22,16 @@ export default function DesignPreview() {
         <p className="font-mono text-xs tracking-[0.12em] uppercase text-ink-3">
           Design tokens
         </p>
-        <h1 className="text-3xl font-semibold tracking-tight">確認用ページ</h1>
+        <h1 className="text-3xl font-medium tracking-tight">確認用ページ</h1>
         <p className="text-ink-2">
-          OS の外観設定をライト／ダークで切り替えて、配色が入れ替わるか確認します。
+          欧文 IBM Plex Sans、和文 Zen Kaku Gothic New、等幅 IBM Plex Mono。
+          配色はライトのみで、OS がダークでも白のまま表示されます。
         </p>
       </header>
 
       {/* 色 */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xl font-semibold tracking-tight">色</h2>
+        <h2 className="text-xl font-medium tracking-tight">色</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {colors.map((c) => (
             <div
@@ -55,15 +56,18 @@ export default function DesignPreview() {
 
       {/* 書体 */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xl font-semibold tracking-tight">書体</h2>
+        <h2 className="text-xl font-medium tracking-tight">書体</h2>
         <div className="border border-line rounded bg-surface divide-y divide-line">
           <Row label="Name / 32px">
-            <span className="text-3xl font-semibold tracking-tight">
+            <span className="text-3xl font-medium tracking-tight">
               Sotaro Ando
             </span>
           </Row>
+          <Row label="Name 和文">
+            <span className="text-3xl font-medium tracking-tight">安藤颯太郎</span>
+          </Row>
           <Row label="H2 / 20px">
-            <span className="text-xl font-semibold tracking-tight">Works</span>
+            <span className="text-xl font-medium tracking-tight">Works</span>
           </Row>
           <Row label="Body 欧文">
             <span className="text-ink-2">
@@ -86,16 +90,19 @@ export default function DesignPreview() {
               2026.07 — TypeScript, FastAPI
             </span>
           </Row>
+          <Row label="Weight 400/500/700">
+            <span className="flex gap-4 flex-wrap">
+              <span className="font-normal">通常 Regular</span>
+              <span className="font-medium">中太 Medium</span>
+              <span className="font-bold">太字 Bold</span>
+            </span>
+          </Row>
         </div>
-        <p className="text-sm text-ink-2">
-          和文が明朝やヒラギノに見える場合は IBM Plex Sans JP
-          が効いていないので、実装を見直します。
-        </p>
       </section>
 
       {/* 部品 */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xl font-semibold tracking-tight">部品</h2>
+        <h2 className="text-xl font-medium tracking-tight">部品</h2>
         <div className="flex flex-wrap items-center gap-3">
           <span className="rounded border border-accent bg-accent px-4 py-1.5 text-sm text-on-accent">
             Works

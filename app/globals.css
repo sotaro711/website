@@ -2,8 +2,7 @@
 
 /* =========================================================
    デザイントークン
-   ライトを既定とし、OS がダークのときだけ値を差し替える。
-   切り替えボタンは持たない。
+   配色はライトのみ。OS がダークでも白のまま表示する。
    ========================================================= */
 
 :root {
@@ -16,20 +15,8 @@
   --line-2: #d3d7e2; /* タグ枠など、やや強い線 */
   --accent: #2544d6; /* Morpho ブルー: リンク・ボタン */
   --on-accent: #ffffff; /* アクセント上に乗る文字 */
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ground: #0d0f15;
-    --surface: #171a24;
-    --ink: #e9ebf2;
-    --ink-2: #a6acc0;
-    --ink-3: #767d93;
-    --line: #242835;
-    --line-2: #333949;
-    --accent: #8fa4ff; /* 暗い地では沈むので明度を上げる */
-    --on-accent: #0d0f15;
-  }
+  color-scheme: light; /* OS がダークでもフォーム部品を白基調に固定する */
 }
 
 /* Tailwind のユーティリティに接続する。
@@ -45,9 +32,9 @@
   --color-accent: var(--accent);
   --color-on-accent: var(--on-accent);
 
-  /* 欧文は IBM Plex Sans、和文はそこに無いので IBM Plex Sans JP に落ちる */
+  /* 欧文は IBM Plex Sans、和文はそこに無いので Zen Kaku Gothic New に落ちる */
   --font-sans:
-    var(--font-plex-sans), var(--font-plex-jp), ui-sans-serif, system-ui,
+    var(--font-plex-sans), var(--font-zen-kaku), ui-sans-serif, system-ui,
     sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
