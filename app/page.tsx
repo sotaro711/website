@@ -9,17 +9,17 @@ export default function Home() {
         <Image
           src={site.portrait}
           alt={site.name}
-          width={160}
-          height={160}
+          width={176}
+          height={176}
           priority
-          className="size-40 rounded-full object-cover"
+          className="size-44 rounded-full object-cover"
           /* 元の写真が暗いので、ごく軽く持ち上げている */
           style={{ filter: "brightness(1.06) contrast(1.02)" }}
         />
 
         <div className="flex flex-col gap-1.5">
-          <h1 className="text-4xl font-medium tracking-tight">{site.name}</h1>
-          <p className="text-ink-2">{site.role}</p>
+          <h1 className="text-5xl font-bold tracking-tight">{site.name}</h1>
+          <p className="text-lg text-ink-2">{site.role}</p>
           <p className="text-sm text-ink-3">{site.affiliation}</p>
         </div>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans, Zen_Kaku_Gothic_New } from "next/font/google";
 import { SiteNav } from "@/components/site-nav";
+import { site } from "@/content/site";
 import "./globals.css";
 
 // 和欧で使えるウェイトを 400 / 500 / 700 に揃えている。
@@ -28,9 +29,11 @@ const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
 });
 
+// タイトルや説明文も content/site.ts を正とする。
+// OGP などの本格的な設定は Step 6 でまとめて入れる。
 export const metadata: Metadata = {
-  title: "Sotaro Ando",
-  description: "Student / Software Engineer Intern",
+  title: site.name,
+  description: `${site.role} — ${site.affiliation}`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

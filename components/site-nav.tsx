@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { nav, site } from "@/content/site";
 
-/** 全ページ共通のヘッダー。左に名前（＝ホームへの導線）、右にページリンク。 */
+/**
+ * 全ページ共通のヘッダー。
+ * 罫線は画面の端から端まで引き、中身だけを最大幅で中央に置く。
+ */
 export function SiteNav() {
   return (
-    <header className="w-full">
-      <nav className="mx-auto flex w-full max-w-3xl items-baseline gap-6 px-6 py-6 text-sm">
+    <header className="w-full border-b border-line">
+      <nav className="mx-auto flex w-full max-w-6xl items-center gap-8 px-6 py-5 sm:px-8">
         <Link
           href="/"
-          className="mr-auto font-medium tracking-tight transition-colors hover:text-accent"
+          className="mr-auto text-lg font-bold tracking-tight transition-colors hover:text-accent"
         >
           {site.name}
         </Link>
