@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans, Zen_Kaku_Gothic_New } from "next/font/google";
+import { SiteNav } from "@/components/site-nav";
 import "./globals.css";
 
 // 和欧で使えるウェイトを 400 / 500 / 700 に揃えている。
@@ -38,7 +39,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ja"
       className={`${plexSans.variable} ${zenKaku.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteNav />
+        {children}
+      </body>
     </html>
   );
 }
