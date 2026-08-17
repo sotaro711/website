@@ -17,10 +17,9 @@ export default function Home() {
           style={{ filter: "brightness(1.06) contrast(1.02)" }}
         />
 
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-2">
           <h1 className="text-5xl font-bold tracking-tight">{site.name}</h1>
-          <p className="text-lg text-ink-2">{site.role}</p>
-          <p className="text-sm text-ink-3">{site.affiliation}</p>
+          <p className="text-ink-2">{site.affiliation}</p>
         </div>
 
         <div className="mt-1 flex gap-3">

@@ -1,4 +1,3 @@
-import { TechChip } from "@/components/tech-chip";
 import type { CareerEntry } from "@/content/about";
 
 /**
@@ -32,14 +31,6 @@ export function CareerTimeline({ entries }: { entries: CareerEntry[] }) {
           </p>
 
           <p className="text-ink-2">{entry.description}</p>
-
-          {entry.stack && (
-            <ul className="mt-0.5 flex flex-wrap gap-1.5">
-              {entry.stack.map((s) => (
-                <TechChip key={s} name={s} />
-              ))}
-            </ul>
-          )}
         </li>
       ))}
     </ol>

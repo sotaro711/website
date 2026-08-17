@@ -9,8 +9,6 @@ export type CareerEntry = {
   period: string;
   /** 何をした／しているかを2〜3行。役職名から想像できることは書かない */
   description: string;
-  /** 使った技術。無ければ省略 */
-  stack?: string[];
 };
 
 /**
@@ -31,7 +29,6 @@ export const career: CareerEntry[] = [
     org: "株式会社LYMO",
     period: "2025.10 — 2026.04",
     description: "自社プロダクト Lamb の開発。",
-    stack: ["React", "TypeScript", "Next.js", "Express", "PostgreSQL"],
   },
   {
     role: "工学部 機械システム工学科",

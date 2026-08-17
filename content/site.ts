@@ -5,6 +5,7 @@
 export const site = {
   name: "Sotaro Ando",
   nameJa: "安藤颯太郎",
+  /** 画面には出さず、検索結果やリンクカードの説明文にだけ使う */
   role: "Software Engineer Intern",
   affiliation: "Mechanical Systems Engineering @ Yamagata University",
   portrait: "/portrait.webp",
