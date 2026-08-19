@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CareerTimeline } from "@/components/career-timeline";
 import { PageShell } from "@/components/page-shell";
 import { TechChip } from "@/components/tech-chip";
@@ -13,18 +14,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageShell title="About" lead={`${site.nameJa} / ${site.name}`}>
-      <div className="flex flex-col gap-4 text-ink-2">
-        <p>
-          山形大学 工学部
-          機械システム工学科の学生です。専攻は機械系ですが、研究で使う光学計算を誰でも触れる形にしたくて
-          Web を書き始めました。
-        </p>
-        <p>
-          今はソフトウェアエンジニアとしてインターンをしています。フロントエンドは
-          TypeScript と React、バックエンドは FastAPI か NestJS。数値計算まわりは
-          Python と C++ を書きます。
-        </p>
-      </div>
+      <p className="text-ink-2">
+        山形大学 工学部
+        機械システム工学科の4年生<br />
+        スタートアップでソフトウェアエンジニアとしてインターンをしています。
+      </p>
 
       <Section label="Career">
         <CareerTimeline entries={career} />
@@ -48,9 +42,110 @@ export default function AboutPage() {
       </Section>
 
       <Section label="Off">
-        <p className="text-ink-2">
-          （趣味を2〜3行。ここだけ少し文体を崩してよい箇所です）
-        </p>
+        <div className="flex flex-col gap-3">
+          <h3 className="font-medium">愛車 🚗</h3>
+          <p className="text-ink-2">
+            大学3年のとき、気合いのローンで買いました💸
+          </p>
+          <div className="flex flex-col gap-2">
+            <Image
+              src="/about/car-1.webp"
+              alt="夜のガソリンスタンドにて"
+              width={1280}
+              height={1707}
+              sizes="(max-width: 704px) 100vw, 640px"
+              className="w-full rounded-lg"
+            />
+            <div className="grid grid-cols-2 gap-2">
+              <Image
+                src="/about/car-2.webp"
+                alt="親父とドライブ"
+                width={640}
+                height={480}
+                sizes="(max-width: 704px) 50vw, 312px"
+                className="w-full rounded-lg"
+              />
+              <Image
+                src="/about/car-3.webp"
+                alt="友達とドライブ"
+                width={640}
+                height={480}
+                sizes="(max-width: 704px) 50vw, 312px"
+                className="w-full rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-3">
+          <h3 className="font-medium">旅行 ✈️</h3>
+          <p className="text-ink-2">
+            大学3年でタイに行って以来、旅行にハマっています。「常識にとらわれず自由に生きていいんだ」と価値観が変わった旅でした。今年も海外に行くつもりです。
+          </p>
+          <div className="flex flex-col gap-2">
+            <Image
+              src="/about/trip-1.webp"
+              alt="バンコク、チャオプラヤー川越しのワットアルン"
+              width={1280}
+              height={1050}
+              sizes="(max-width: 704px) 100vw, 640px"
+              className="w-full rounded-lg"
+            />
+            <div className="grid grid-cols-2 gap-2">
+              <Image
+                src="/about/trip-2.webp"
+                alt="水上マーケットで食べたココナッツアイス"
+                width={640}
+                height={853}
+                sizes="(max-width: 704px) 50vw, 312px"
+                className="w-full rounded-lg"
+              />
+              <Image
+                src="/about/trip-3.webp"
+                alt="夜のビーチ"
+                width={640}
+                height={853}
+                sizes="(max-width: 704px) 50vw, 312px"
+                className="w-full rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-3">
+          <h3 className="font-medium">スノボ 🏂</h3>
+          <p className="text-ink-2">
+            山形に来てどハマりしました。さすが雪国、ゲレンデが近いので毎年通っています。
+          </p>
+          <div className="flex flex-col gap-2">
+            <Image
+              src="/about/snow-1.webp"
+              alt="山頂から滑り出す前の一枚"
+              width={1079}
+              height={771}
+              sizes="(max-width: 704px) 100vw, 640px"
+              className="w-full rounded-lg"
+            />
+            <div className="grid grid-cols-2 gap-2">
+              <Image
+                src="/about/snow-2.webp"
+                alt="パウダーに埋まったところ"
+                width={640}
+                height={853}
+                sizes="(max-width: 704px) 50vw, 312px"
+                className="w-full rounded-lg"
+              />
+              <Image
+                src="/about/snow-3.webp"
+                alt="樹氷原"
+                width={640}
+                height={853}
+                sizes="(max-width: 704px) 50vw, 312px"
+                className="w-full rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
       </Section>
     </PageShell>
   );
