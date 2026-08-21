@@ -22,10 +22,10 @@ export type Work = {
 export const works: Work[] = [
   {
     name: "Morpho",
-    period: "2026.07 —",
+    period: "2026.05 —",
     wip: true,
     summary:
-      "多層薄膜・回折構造の光学シミュレータ。層の構成と屈折率を入力すると、RCWA法で 380–780nm の反射・透過スペクトルを計算し、そのまま「見える色」に変換して返す。研究で使う光学計算はコマンドラインと設定ファイルの世界に閉じがちなので、ブラウザから条件を変えながら結果を見られるようにした。",
+      "多層薄膜の「構造色」をブラウザ上でシミュレーションするツール。開発中。",
     stack: ["TypeScript", "Next.js", "FastAPI", "Python", "S4 / RCWA"],
     repo: "https://github.com/sotaro711/Morpho",
   },

@@ -1,6 +1,6 @@
 # website
 
-安藤颯太郎の個人サイト。
+Sotaroの個人サイト。
 
 ## Stack
 
