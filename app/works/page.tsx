@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function WorksPage() {
   return (
-    <PageShell title="Works" lead="作ったもの / 作っているもの">
+    <PageShell title="Works" lead="作っているもの">
       <ul className="flex flex-col">
         {works.map((work) => (
           <WorkCard key={work.name} work={work} />
