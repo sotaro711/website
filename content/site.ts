@@ -21,7 +21,6 @@ export const nav = [
 /** トップページ下部に並べる外部リンク */
 export const socials = [
   { href: "https://github.com/sotaro711", label: "GitHub" },
-  { href: "https://x.com/senobizn6", label: "X" },
   { href: "https://zenn.dev/sotaro711", label: "Zenn" },
   { href: "https://www.wantedly.com/id/sotaro_ando711", label: "Wantedly" },
 ] as const;
