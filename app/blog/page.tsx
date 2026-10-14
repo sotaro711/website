@@ -56,14 +56,14 @@ function EntryRow({ entry }: { entry: Entry }) {
       <span className="font-medium transition-colors group-hover:text-accent">
         {entry.title}
       </span>
-      <span className="shrink-0 font-mono text-xs tabular-nums text-ink-3">
-        {entry.external && "Zenn ↗ · "}
+      <span className="font-mono text-xs tabular-nums text-ink-3">
         {entry.date.replaceAll("-", ".")}
+        {entry.external && " · Zenn ↗"}
       </span>
     </>
   );
-  const className =
-    "group flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-5";
+  /* タイトルの長さで日付の位置が変わらないよう、常に2段にする */
+  const className = "group flex flex-col gap-1.5 py-5";
 
   return (
     <li className="border-t border-line">
