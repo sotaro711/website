@@ -1,4 +1,5 @@
 import { TechChip } from "@/components/tech-chip";
+import { WorkVideo } from "@/components/work-video";
 import type { Work } from "@/content/works";
 
 /** 作品1件。詳細ページは持たず、この中で完結させる。 */
@@ -9,9 +10,17 @@ export function WorkCard({ work }: { work: Work }) {
         <h2 className="text-xl font-bold tracking-tight">{work.name}</h2>
         <p className="font-mono text-xs tabular-nums text-ink-3">
           {work.period}
-          {work.wip && " 開発中"}
+          {work.status && ` ${work.status}`}
         </p>
       </div>
+
+      {work.video && (
+        <WorkVideo
+          src={work.video.src}
+          poster={work.video.poster}
+          label={`${work.name} の操作画面`}
+        />
+      )}
 
       <p className="text-ink-2">{work.summary}</p>
 
@@ -30,6 +39,11 @@ export function WorkCard({ work }: { work: Work }) {
         {work.repo && (
           <a href={work.repo} className="text-accent hover:underline">
             Code ↗
+          </a>
+        )}
+        {work.article && (
+          <a href={work.article} className="text-accent hover:underline">
+            Article ↗
           </a>
         )}
       </div>
